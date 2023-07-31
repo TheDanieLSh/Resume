@@ -1,0 +1,314 @@
+@font-face {
+    font-family: 'corvette deco';
+    src: url(fonts/12148.ttf);   
+}
+@font-face {
+    font-family: 'compact';
+    src:url(fonts/compact_[allfont.ru].ttf);
+}
+@font-face {
+    font-family: 'futura';
+    src: url(fonts/futura-normal_[allfont.ru].ttf);
+}
+@font-face {
+    font-family: 'gill sans mt';
+    src: url(fonts/gillsansmt.ttf);
+}
+
+@font-face {
+    font-family: 'inter';
+    src:url(fonts/20703.otf)
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #e0e0e0;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+    background-color: #c9c9c9;
+    font-size: 30px;
+    top: 0;            
+}
+
+nav > ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.firstlevel {
+    position: relative;
+}
+
+#spidersub {
+    font-size: 29px;
+}
+
+.navig {
+    color: black;
+    background-color: #c9c9c9;
+}
+
+#submenu {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#submenu li {
+    display: block;
+}
+
+#spis:hover #submenu {
+    opacity: 1;
+    visibility: visible;
+}
+
+li:hover {
+    background-color: black;
+}
+
+li:hover > .navig {
+    background-color: black;
+    color: white;
+}
+
+nav a {
+    text-decoration: none;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: block;
+}
+
+@media screen and (max-width: 480px) {
+    nav a {
+        padding-right: 5px;
+        padding-left: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: center;
+    }
+}
+
+p a {
+    text-decoration: none;
+    color: #878484;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+#glavnaya {
+    z-index: -1;
+    position: fixed;
+    width: 100%;
+    height: 773px;
+    top: 0;
+    padding-bottom: 150px;
+}
+
+#spisok, #kontakti {
+    z-index: 2;    
+}
+
+#logo {
+    text-align: center;
+}
+
+#zhishlogo {
+    height: 400px;
+    width: 400px;
+    opacity: 0;
+    position: relative;
+    top: 100px;
+}
+
+#header {
+    text-align: center;
+    font-size: 70px;
+    padding-top: 85px;
+    font-family: futura;
+    font-weight: bold;
+}
+
+#headerhr {
+    width: 250px;
+    height: 7px;
+    background-color: black;
+    position: relative;
+    bottom: 8px;
+    margin: auto;
+    margin-top: 8px;
+}
+
+#pripiska {
+    text-align: center;
+    font-size: 40px;
+    font-family: futura;
+    margin-top: 8px;
+}
+
+#spisokrabot {
+    font-family: futura;
+    font-size: 40px;
+    text-align: center;
+    color: white;
+}
+
+#SMN {
+    font-family: corvette deco;
+    color: white;
+    font-size: 70px;
+    padding-top: 50px;
+    margin-left: 10px;
+}
+
+#TLOU {
+    font-family: compact;
+    color: white;
+    font-size: 70px;
+    margin-left: 10px;
+}
+
+.oblozhki {
+    height: 400px;
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-right: 15px;
+}
+
+.issue {
+    display: inline-block;
+    color: white;
+    border: solid;
+    border-color: 595959;
+    border-radius: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    background-color: #1a1a1a;
+}
+
+.issue p {
+    text-align: center;
+    font-family: gill sans mt;
+    font-size: 20px;
+    margin-top: 8px;
+    margin-bottom: 5px;
+}
+
+#spisok {
+    background-color: #141313;
+    margin-top: 773px;
+
+}
+
+#kontakti {
+    background-color: #242323;
+}
+
+#footerhr {
+    height: 5px;
+    border: 0;
+    background-color: #ada8a8;
+}
+
+.info {
+    text-align: right;
+    font-size: 20px;
+    font-family: futura;
+    color: #878484;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+
+#cookies {
+    position: fixed;
+    z-index: 3;
+    display:inline-block;
+    background-color: white;
+    border: solid yellowgreen;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 80px;
+    padding-bottom: 20px;
+    right: 5px;
+    bottom: -100px;
+    font-size: 25px;
+    font-family: inter;
+}
+
+#cookies button {
+    display: inline;
+}
+
+.knopka {
+    padding: 4px;
+    margin: 3px;
+}
+
+#popup {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 5;
+    left: 25%;
+    top: 20%;
+    background-color: white;
+    border: solid black;
+    border-radius: 10px;
+    font-size: 30px;
+    font-family: inter;
+}
+
+@media screen and (max-width: 480px) {
+    #popup {
+        display: block;
+        text-align: center;
+        left: 0;
+        top: 20%;        
+    }
+    #popup img {
+        height: 305px;
+    }
+}
+
+#popupaccept {
+    margin-top: 10px;
+    margin-left: 5px;
+    height: 40px;
+    width: 100px;
+    font-size: 15px;
+    border: solid yellowgreen;
+    background-color: white;
+    border-radius: 5px;
+}
+
+#popupaccept:hover {
+    background-color: whitesmoke;
+}
+
+#pelena {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 4;
+    padding-right: 100%;
+    padding-bottom: 100%;
+    display: none;    
+}
+
+.nooverflow {
+    overflow-y: hidden;
+}

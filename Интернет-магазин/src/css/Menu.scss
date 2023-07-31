@@ -1,0 +1,64 @@
+.menu {
+    position: relative;
+    text-align: center;
+    font-size: 3rem;
+    color: white;
+    & ul {
+        position: relative;
+        cursor: pointer;
+    }
+    & li {
+        position: relative;
+        display: inline;
+        padding: 0 1.5vw;
+        &::before {
+            content: "";
+            background-color: white;
+            position: absolute;
+            top: 0;
+            left: 50%;
+        }
+        &::after {
+            content: "";
+            background-color: white;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+        }
+        &:hover {
+            &::before, &::after {
+                animation: menu_hover;
+                animation-duration: 0.35s;
+                animation-fill-mode: forwards;
+            }
+        }
+    }
+}
+
+.mobile_menu {
+    position: relative;
+    cursor: pointer;
+    display: none;
+}
+.currentSection {
+    position: relative;
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 5vw;
+    border-top: 0.8vw solid white;
+    border-bottom: 0.8vw solid white;
+}
+
+@keyframes menu_hover {
+    from {
+        height: 0;
+        width: 0;
+        left: 50%;
+    }
+    to {
+        height: 0.25rem;
+        width: 100%;
+        left: 0;
+    }
+}

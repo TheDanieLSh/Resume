@@ -1,0 +1,261 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.panel {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: #3533b5;
+  width: 100%;
+  height: 50px;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+.menu_button {
+  position: absolute;
+  z-index: 3;
+  top: 20px;
+  left: 20px;
+  width: 30px;
+  height: 20px;
+}
+
+.menu_button:hover {
+  cursor: pointer;
+}
+
+#upDown,
+#downUp {
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  height: 2px;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.unclicked {
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+}
+
+.clickedUp {
+  -webkit-transform: translateY(5px) rotate(45deg);
+          transform: translateY(5px) rotate(45deg);
+}
+
+.clickedDown {
+  -webkit-transform: translateY(5px) rotate(-45deg);
+          transform: translateY(5px) rotate(-45deg);
+}
+
+.menu {
+  position: relative;
+  right: 0;
+  top: 50px;
+  width: 400px;
+  height: 100vh;
+  background-color: #3e44ad;
+  opacity: 0.8;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.show_menu {
+  -webkit-transform: translateX(-400px);
+          transform: translateX(-400px);
+}
+
+.menu_container {
+  position: relative;
+  top: 120px;
+  text-align: center;
+  font-size: 50px;
+}
+
+.menu_item {
+  position: relative;
+  padding: 20px 0;
+  cursor: pointer;
+}
+
+.menu_item::before {
+  content: "";
+  position: absolute;
+  height: 4px;
+  background-color: white;
+}
+
+.menu_item::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  background-color: white;
+  top: 85px;
+}
+
+.menu_item:hover::before, .menu_item:hover::after {
+  -webkit-animation: menu_hover;
+          animation: menu_hover;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.header {
+  width: 100%;
+  height: 750px;
+  overflow: hidden;
+}
+
+.header video {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+
+.header_title {
+  position: absolute;
+  top: 100px;
+  left: 40px;
+  font-size: 95px;
+  letter-spacing: 5px;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  cursor: default;
+}
+
+.text {
+  color: white;
+}
+
+.subheader1 {
+  position: absolute;
+  left: 40px;
+  top: 550px;
+  font-size: 40px;
+  cursor: default;
+  -webkit-animation: rightShift;
+          animation: rightShift;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+}
+
+.subheader2,
+.subheader2_two {
+  position: absolute;
+  top: 640px;
+  right: 20px;
+  font-size: 30px;
+  cursor: default;
+  -webkit-animation: leftShift;
+          animation: leftShift;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+}
+
+.subheader2_two {
+  top: 670px;
+}
+
+.basis {
+  background-color: #3533b5;
+}
+
+.info {
+  font-size: 50px;
+  padding: 20px;
+}
+
+.footer {
+  background-color: #3e44ad;
+  border-top: solid grey;
+}
+
+.footer_text {
+  position: relative;
+  padding: 0 10px;
+  left: 80%;
+  width: 18vw;
+  font-size: 30px;
+}
+
+@-webkit-keyframes menu_hover {
+  from {
+    width: 0;
+    left: 200px;
+  }
+  to {
+    width: 400px;
+    left: 0;
+  }
+}
+
+@keyframes menu_hover {
+  from {
+    width: 0;
+    left: 200px;
+  }
+  to {
+    width: 400px;
+    left: 0;
+  }
+}
+
+@-webkit-keyframes rightShift {
+  from {
+    -webkit-transform: translateX(-20px);
+            transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rightShift {
+  from {
+    -webkit-transform: translateX(-20px);
+            transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes leftShift {
+  from {
+    -webkit-transform: translateX(20px);
+            transform: translateX(20px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes leftShift {
+  from {
+    -webkit-transform: translateX(20px);
+            transform: translateX(20px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

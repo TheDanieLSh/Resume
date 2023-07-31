@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.panel {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: #3533b5;
+    width: 100%;
+    height: 50px;
+    transition-duration: 0.3s;
+}
+
+.menu_button {
+    position: absolute;
+    z-index: 3;
+    top: 20px;
+    left: 20px;
+    width: 30px;
+    height: 20px;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+#upDown,
+#downUp {
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    height: 2px;
+    transition-duration: 0.5s;
+}
+
+.unclicked {
+    transform: translateY(10px);
+}
+
+.clickedUp {
+    transform: translateY(5px) rotate(45deg);
+}
+.clickedDown {
+    transform: translateY(5px) rotate(-45deg);
+}
+
+.menu {
+    position: relative;
+    right: 0;
+    top: 50px;
+    width: 400px;
+    height: 100vh;
+    background-color: #3e44ad;
+    opacity: 0.8;
+    transition-duration: 0.5s;
+}
+
+.show_menu {
+    transform: translateX(-400px);
+}
+
+.menu_container {
+    position: relative;
+    top: 120px;
+    text-align: center;
+    font-size: 50px;
+}
+
+.menu_item {
+    position: relative;
+    padding: 20px 0;
+    cursor: pointer;
+}
+
+.menu_item::before {
+    content: "";
+    position: absolute;
+    height: 4px;
+    background-color: white;
+}
+
+.menu_item::after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    background-color: white;
+    top: 85px;
+}
+
+.menu_item:hover {
+    &::before, &::after {
+        animation: menu_hover;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+    }
+}
+
+.header {
+    width: 100%;
+    height: 750px;
+    overflow: hidden;
+    & video {
+        position: relative;
+        width: 100%;
+        display: block; //убирается белая полоса под блоком
+    }
+}
+
+.header_title {
+    position: absolute;
+    top: 100px;
+    left: 40px;
+    font-size: 95px;
+    letter-spacing: 5px;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    cursor: default;
+}
+
+.text {
+    color: white;
+}
+
+.subheader1 {
+    position: absolute;
+    left: 40px;
+    top: 550px;
+    font-size: 40px;
+    cursor: default;
+    animation: rightShift;
+    animation-duration: 0.8s;
+}
+
+.subheader2,
+.subheader2_two {
+    position: absolute;
+    top: 640px;
+    right: 20px;
+    font-size: 30px;
+    cursor: default;
+    animation: leftShift;
+    animation-duration: 0.8s;
+}
+
+.subheader2_two {
+    top: 670px;
+}
+
+.basis {
+    background-color: #3533b5;
+}
+
+.info {
+    font-size: 50px;
+    padding: 20px;
+}
+
+.footer {
+    background-color: #3e44ad;
+    border-top: solid grey;
+}
+
+.footer_text {
+    position: relative;
+    padding: 0 10px;
+    left: 80%;
+    width: 18vw;
+    font-size: 30px;
+}
+
+@keyframes menu_hover {
+    from {
+        width: 0;
+        left: 200px;
+    }
+    to {
+        width: 400px;
+        left: 0;
+    }
+}
+
+@keyframes rightShift {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes leftShift {
+    from {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

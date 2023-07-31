@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="stylesheet.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>The Beauty</title>
+    <script>
+        $(document).ready(function () {
+            switchleft();
+            $('.header').animate({ marginTop: '15%', opacity: '1' }, 500);
+
+            $('#rightswitch').click(function () {
+                $('.main').append('<img src="jap1.jpg" class="newright">');
+                $('.newright').animate({ right: '0' }, 1400);
+                $('.ocherednyara').animate({ left: '-50vw' }, 1400, function () {
+                    $(this).remove();
+                });
+                $('.newright').addClass("ocherednyara");
+                switchright();
+            })
+            $('#leftswitch').click(function () {
+                $('.main').append('<img src="swis1.jpg" class="newleft">');
+                $('.newleft').animate({ left: '0' }, 1400);
+                $('.ocherednyara').animate({ right: '-50vw' }, 1400, function () {
+                    $(this).remove();
+                });
+                $('.newleft').addClass("ocherednyara");
+                switchleft();
+            })
+
+            $('.kartinki').on('load', function() {
+                $(this).css({top: '10px', opacity: '0.5'});
+                sdvig();
+            })
+            function sdvig() {
+                $('.kartinki').animate({top: '0px', opacity: '1'}, 700);
+            }
+                        
+            let scrolledPevious;
+            window.addEventListener('scroll', function () {
+                let thirdOffset = $('#thirdimg').offset().top;
+                let scrollBottom = $(window).scrollTop() + $(window).height();
+                if (scrollBottom >= thirdOffset && $(window).scrollTop() <= (thirdOffset + $('#thirdimg').height())) {
+                    parallax();
+                }
+            })
+
+            function parallax() {
+                let secondOffset = $('#secondimg').offset().top;
+                let thirdOffset = $('#thirdimg').offset().top;
+                let fourthOffset = $('#fourthimg').offset().top;
+                let scrolled = $(window).scrollTop();
+                let change;
+                if (scrolled > scrolledPevious && fourthOffset < (thirdOffset + $('#thirdimg').height())) {
+                    change = -2;
+                } else if (scrolled < scrolledPevious && (secondOffset + $('#secondimg').height()) > thirdOffset) {
+                    change = 2;
+                }
+                let imgtop = $('#thirdimg').css('top');
+                imgtop = parseInt(imgtop, 10);
+                $('#thirdimg').css('top', imgtop + change + 'px');
+                scrolledPevious = $(window).scrollTop();
+            }
+        })
+
+        function switchright() {
+            $('#rightswitch').hide();
+            $('#leftswitch').show();
+            $('#secondimg').attr({ 'src': 'jap2.jpg' });
+            $('#thirdimg').attr({ 'src': 'jap3.jpg' });
+            $('#fourthimg').attr({ 'src': 'jap4.jpg' });
+        };
+
+        function switchleft() {
+            $('#leftswitch').hide();
+            $('#rightswitch').show();
+            $('#secondimg').attr({ 'src': 'swis2.jpg' });
+            $('#thirdimg').attr({ 'src': 'swis3.jpg' });
+            $('#fourthimg').attr({ 'src': 'swis4.jpg' });
+        }
+    </script>    
+</head>
+<body>
+    <section class="main">
+        <img src="swis1.jpg" class="ocherednyara">
+        <div id="rightswitch" class="switch"></div>
+        <div id="leftswitch" class="switch"></div>
+        <div class="menu">
+            Контакты
+            <hr>
+        </div>
+        <div class="header">
+            <div>THE BEAUTY OF</div>
+            <div>SWITZERLAND AND JAPAN</div>
+        </div>
+    </section>
+    <section class="below">
+        <img id="secondimg" class="kartinki">
+        <img id="thirdimg">
+        <img id="fourthimg" class="kartinki">
+    </section>
+</body>
+</html>

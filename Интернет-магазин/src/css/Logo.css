@@ -1,0 +1,28 @@
+.headerFL {
+  position: relative;
+  font-size: 11.5rem;
+  font-family: neonblitz;
+  color: #e3205a;
+  text-align: center;
+  text-shadow:
+    /* White glow */
+    0 0 7px #e3205a,
+    0 0 10px #e3205a,
+    0 0 21px #e3205a,
+    /* Green glow */
+    0 0 42px #e3205a,
+    0 0 82px #e3205a,
+    0 0 92px #e3205a,
+    0 0 102px #e3205a,
+    0 0 151px #e3205a;
+}
+.headerSL {
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%) rotate(-10deg);
+  bottom: 4rem;
+  font-size: 10.5rem;
+  font-family: mondayVibes;
+  color: #eb317e;
+}

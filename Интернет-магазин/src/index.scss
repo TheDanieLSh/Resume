@@ -1,0 +1,228 @@
+@font-face {
+    font-family: "neonblitz";
+    src: url(../public/fonts/Neonblitz.ttf);
+}
+@font-face {
+    font-family: "mondayVibes";
+    src: url(../public/fonts/MondayVibes.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+        "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #282c34;
+}
+
+main {
+    margin: 2.5vw 0;
+}
+
+p {
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+@import url(./css/Logo.css);
+@import url(./css/Menu.css);
+@import url(./css/SearchBar.css);
+@import url(./css/Bottom.css);
+@import url(./css/GoodsList.css);
+@import url(./css/Section.css);
+@import url(./css/Pages.css);
+@import url(./css/ProductPage.css);
+
+@media screen and (max-width: 43rem) {
+    .searchBar {
+        width: 95%;
+    }
+    .searchForm,
+    .searchList_block {
+        grid-template-columns: 85% 15%;
+    }
+    .searchListItem {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 59rem) {
+    .productPage {
+        flex-direction: column;
+        align-items: center;
+    }
+    .productInfo {
+        margin-top: 2rem;
+    }
+
+    .menu {
+        font-size: 3.7vw;
+        & li {
+            padding: 0 1vw;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .searchBar {
+        width: 97%;
+    }
+    .searchForm,
+    .searchList_block {
+        grid-template-columns: 80% 20%;
+    }
+    .searchForm {
+        & input {
+            height: 10vw;
+            border-radius: 2.5vw;
+            padding-left: 0.7vw;
+            font-size: 4vw;
+        }
+        & button {
+            height: 10vw;
+            border-radius: 2.5vw;
+            font-size: 4vw;
+        }
+    }
+    .searchListItem {
+        width: 80%;
+        height: 10vw;
+        border-radius: 2.5vw;
+        padding-left: 0.8vw;
+        font-size: 4vw;
+    }
+
+    .headerFL {
+        font-size: 20vw;
+    }
+    .headerSL {
+        font-size: 15vw;
+        bottom: 6vw;
+    }
+
+    .menu {
+        position: relative;
+        font-size: 8vw;
+        & ul {
+            position: absolute;
+            z-index: 1;
+        }
+        & li {
+            display: block;
+            position: relative;
+            background-color: #282c34;
+            &:hover {
+                &::before, &::after {
+                    animation: none;
+                }
+            }
+        }
+    }
+    .desktop_menu {
+        display: none;
+    }
+    .mobile_menu {
+        display: block;
+        &.has-open {
+            background-color: #262626;
+            .currentSection {
+                border-top: none;
+                border-bottom: none;
+            }
+            .menuList {
+                display: block;
+            }
+            
+        }
+    }
+    .menuList {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .pageContent > p {
+        font-size: 6vw;
+    }
+    .list {
+        flex-direction: column;
+        width: 95%;
+        align-items: center;
+    }
+    .productCard {
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: 30vw;
+        border-radius: 4vw;
+        margin: 1vw 0;
+    }
+    .productPicture {
+        width: 30%;
+        height: 100%;
+        padding: 1%;
+        border-radius: 2vw;
+        & img {
+            border-radius: 4vw;
+        }
+    }
+    .productNameBlock {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1%;
+        width: 66%;
+    }
+    .productName {
+        font-size: 6vw;
+    }
+
+    .pageLink {
+        font-size: 7vw;
+        margin: auto 1.3vw;
+    }
+
+    .footerInfo {
+        font-size: 4.5vw;
+    }
+
+    .productPage {
+        flex-direction: column;
+        align-items: center;
+        & img {
+            width: 75%;
+            height: auto;
+            margin: 0;
+        }
+    }
+    .productInfo {
+        margin: 1vw;
+        bottom: 0;
+    }
+    .nameHeader {
+        font-size: 7vw;
+        text-align: center;
+    }
+    .description {
+        margin-top: 2vw;
+        font-size: 5vw;
+    }
+}

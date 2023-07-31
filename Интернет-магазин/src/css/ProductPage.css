@@ -1,0 +1,30 @@
+.productPage {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+.productPage img {
+  position: relative;
+  width: 45rem;
+  height: 45rem;
+  border-radius: 2rem;
+  margin-left: 4rem;
+}
+
+.productInfo {
+  position: relative;
+  margin: 0 2rem 0 4rem;
+  bottom: 1rem;
+}
+
+.nameHeader {
+  position: relative;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.description {
+  position: relative;
+  margin-top: 1.5rem;
+  font-size: 2.2rem;
+}/*# sourceMappingURL=ProductPage.css.map */

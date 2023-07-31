@@ -1,0 +1,17 @@
+.pageContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pageContent[data-main="true"] {
+    display: block;
+}
+
+.pageContent > p {
+    position: relative;
+    padding: 0 1.5rem;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+}

@@ -1,0 +1,20 @@
+.theLine {
+    height: 2px;
+    width: 100%;
+    background-color: gray;
+    border: 0 1px;
+}
+
+.footerInfo {
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.footerInfo a {
+    color: #c2b8b8;
+}
+.footerInfo a:hover {
+    text-decoration: underline;
+}

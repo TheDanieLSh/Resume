@@ -1,0 +1,6 @@
+RewriteEngine on
+Rewritecond %{REQUEST_FILENAME} !static
+Rewritecond %{REQUEST_FILENAME} !fonts
+Rewritecond %{REQUEST_FILENAME} !product_pics
+Rewritecond %{REQUEST_FILENAME} !products.json
+RewriteRule . index.html [L]
