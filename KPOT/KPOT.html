@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <link rel="icon" href="kpot.png">
+    <title>KPOT</title>
+</head>
+
+<body>
+    <div id="score"></div>
+    <div>
+        <span class="holes">
+            <img src="hole.png" onmousedown="reduceScore()" />
+            <img src="hole.png" onmousedown="reduceScore()" />
+            <img src="hole.png" onmousedown="reduceScore()" />
+            <br>
+            <img src="hole.png" onmousedown="reduceScore()" />
+            <img src="hole.png" onmousedown="reduceScore()" />
+            <img src="hole.png" onmousedown="reduceScore()" />
+        </span>
+    </div>
+    <div>
+        <img src="kpot.png" onmousedown="addScore()" id="mole1" class="moles" />
+        <img src="kpot.png" onmousedown="addScore()" id="mole2" class="moles" />
+        <img src="kpot.png" onmousedown="addScore()" id="mole3" class="moles" />
+        <img src="kpot.png" onmousedown="addScore()" id="mole4" class="moles" />
+        <img src="kpot.png" onmousedown="addScore()" id="mole5" class="moles" />
+        <img src="kpot.png" onmousedown="addScore()" id="mole6" class="moles" />
+    </div>
+</body>
+<script>
+    let score = 0;
+    document.getElementById('score').innerHTML = score;
+
+    let currentTimeout;
+
+    const molesquery = document.querySelectorAll('.moles');
+    const moles = Array.apply(null, molesquery);
+
+    moles.forEach(x => {
+        x.hidden = true;
+    });
+
+    randomAppearance();
+
+    function randomAppearance() {
+        let rnd = Math.floor(Math.random() * 6);
+        moles.forEach(x => {
+            x.hidden = true;
+        });
+        moles[rnd].hidden = false;
+        rnd = Math.floor(Math.random() * 6);
+        currentTimeout = setTimeout(randomAppearance, 1000 - score * 10);
+    }
+
+    function addScore() {
+        score++;
+        document.getElementById('score').innerHTML = score;
+        clearTimeout(currentTimeout);
+        randomAppearance();
+    }
+    function reduceScore() {
+        score--;
+        document.getElementById('score').innerHTML = score;
+    }
+</script>
+
+</html>
