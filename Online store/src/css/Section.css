@@ -8,10 +8,9 @@
     display: block;
 }
 
-.pageContent > p {
+.pageContent h2 {
     position: relative;
     padding: 0 1.5rem;
-    color: white;
     font-size: 3rem;
     font-weight: bold;
 }

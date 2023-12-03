@@ -6,24 +6,24 @@ export default function Section() {
     return (
         <Routes>
             <Route path='/' element={<>
-                <div className="pageContent" data-main="true">
-                    <p>Новинки</p>
+                <section className="pageContent" data-main="true">
+                    <h2>Новинки</h2>
                     <GoodsList goods="novelties" />
-                    <p>Топ продаж</p>
+                    <h2>Топ продаж</h2>
                     <GoodsList goods="hot" />
-                </div>
+                </section>
             </>} />
             <Route path='/:section/:page_number' element={<>
-                <div className='pageContent'>
+                <section className='pageContent'>
                     <GoodsList />
                     <Pages />
-                </div>
+                </section>
             </>} />
             <Route path='/search/:search_item/:page_number' element={<>
-                <div className='pageContent'>
+                <section className='pageContent'>
                     <GoodsList />
                     <Pages />
-                </div>
+                </section>
             </>} />
         </Routes>
     )

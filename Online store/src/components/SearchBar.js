@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 let searchItem;
 let foundItems = [];
 let listVisability = false;
-let searchLink = window.location.href;
+let searchLink;
 
 export default function SearchBar() {
     const [inputRerender, doInputRerender] = useState(null);
